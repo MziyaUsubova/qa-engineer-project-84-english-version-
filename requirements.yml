@@ -1,0 +1,20 @@
+---
+functional:
+  - Users should be able to search for products by keyword or category
+  - Users should be able to filter products
+  - Users should be able to browse and view detailed information about products
+  - Users should be able to add products to the cart and view cart contents
+non-functional:
+  - The website should be designed for ease of use and optimized for speed
+  - The website must be secure and protect user data
+  - The website should have a mobile version
+  - The website should be tested for compatibility with the latest browser versions
+  - The website should handle a high volume of traffic
+  - The website should be accessible on various devices
+implicit:
+  - High-quality photos
+  - Detailed product descriptions
+  - Ability to filter products by name and price
+  - Personal data should be securely stored on servers and protected from breaches
+  - Ability to view previously viewed products
+  - Display similar products based on previously viewed items
