@@ -1,0 +1,330 @@
+---
+summary: |
+  Check product search by brand name
+requirement: |
+  When the correct brand name is entered in the Search box, a catalog of the brand should appear on the right
+prerequisites: |
+  The main page of the online store is open
+test-data: |
+  Search - L'Oreal Paris
+steps:
+  - Enter the brand name in the Search box
+  - Press the Enter button
+expected-result: |
+  The user should see a list of brand products on the right side
+
+summary: |
+  Check product search by non-existent brand name or product name
+requirement: |
+  When an incorrect brand name is entered, the user should receive a message: "Nothing found!"
+prerequisites: |
+  The main page of the online store is open
+test-data: |
+  Search - H&M
+steps:
+  - Enter the brand name
+  - Press the Enter button
+expected-result: |
+  The user should receive a message: "Nothing found!" and a message: "Go to home page"
+
+summary: |
+  Check product search by existing keyword in English
+requirement: |
+  When a product name is entered in Search, a product named "Plant Hanger For Home" containing the entered keyword should appear
+prerequisites: |
+  The main page is open
+test-data: |
+  Search - "Plant"
+steps:
+  - Enter the product name "Plant"
+  - Press Enter
+expected-result: |
+  The user sees the product "Plant Hanger For Home" on the right found by the keyword
+
+summary: |
+  Check product search by existing keyword in Russian
+requirement: |
+  When a product name is entered in the Search box, a product named "Plant Hanger For Home" containing the entered keyword should appear on the right
+prerequisites: |
+  The main page is open
+test-data: |
+  Search - "Растение"
+steps:
+  - Enter the product name "Растение"
+  - Press Enter
+expected-result: |
+  The user sees the product "Plant Hanger For Home" on the right found by the keyword
+
+summary: |
+  Check product search by category
+requirement: |
+  When a product category is selected from the dropdown list, the products of that category should be displayed on the right
+prerequisites:
+  The main page is open
+test-data: |
+  Category - "skincare"
+steps:
+  - Click the arrow for the dropdown list in the Category box
+  - Select "skincare"
+  - Press Enter
+expected-result: |
+  The user sees a list of products from the selected category on the right
+
+summary: |
+  Check product search by category and keyword in English
+requirement: |
+  When a product category is selected from the dropdown list and a keyword is entered, the corresponding products should be displayed on the right
+prerequisites: |
+  The main page is open
+test-data: |
+  Category - "fragrances"
+  Search - "spray"
+steps:
+  - Click the arrow for the dropdown list in the Category box
+  - Select "fragrances"
+  - Enter the keyword "spray" in the Search box
+  - Press Enter
+expected-result: |
+  The user sees a list of products in the right window
+
+summary: |
+  Check product search by category and keyword in Russian
+requirement: |
+  When a product category is selected from the dropdown list and a keyword is entered, the corresponding products should be displayed on the right
+prerequisites: |
+  The main page is open
+test-data: |
+  Category - "парфюм"
+  Search - "спрей"
+steps:
+  - Click the arrow for the dropdown list in the Category box
+  - Select "парфюм"
+  - Enter the keyword "спрей" in the Search box
+  - Press Enter
+expected-result: |
+  The user sees a list of corresponding products on the right side
+
+summary: |
+  Check interface switch to Russian language
+requirement: |
+  When the Language button is clicked and Russian is selected, the site should be fully readable in Russian
+prerequisites: |
+  The main page is open
+test-data: |
+  Language - Russian
+steps:
+  - Click the Language button
+  - Select Russian from the dropdown list
+expected-result: |
+  The site should be fully readable in Russian: all buttons, forms, dropdown lists, and product descriptions
+
+summary: |
+  Check adding a product to the cart from the main page
+requirement: |
+  When the Add to cart button is clicked, the product is displayed in the cart
+prerequisites: |
+  The main page is open
+test-data: |
+  List of products on the main page
+steps:
+  - Select a product
+  - Click the Add to cart button on the product card
+  - Click the Cart button
+expected-result: |
+  The user sees the number of items in the cart next to the Cart button change as products are added
+
+summary: |
+  Check the flag functionality in the list of product brands
+requirement: |
+  When a flag is set in the box of a specific brand, the products of that brand are displayed on the right side of the main page
+prerequisites: |
+  The main page of the online store is open
+test-data: |
+  List of brands
+steps:
+  - Select the HP Pavilion product from the list
+  - Set the flag in the box next to it
+expected-result: |
+  The products of the selected brand are displayed on the right side of the HP Pavilion product list
+
+summary: |
+  Add a product to the cart without exceeding the available quantity
+requirement: |
+  The user cannot add more items to the cart than are available in stock
+prerequisites: |
+  The main page is open
+test-data: |
+  Product catalog
+steps:
+  - Select the product "Orange Essence Food Flavor" from the catalog
+  - Click the Add to cart button on the main page or the product page
+  - Add the maximum available quantity of the product to the cart
+  - After the quantity in the cart matches the available stock, click the Add to cart button
+expected-result: |
+  The cart displays the maximum quantity of the product available in stock
+
+summary: |
+  Check the Continue Shopping button functionality
+requirement: |
+  After clicking the Continue Shopping button, the user is redirected to the main page
+prerequisites: |
+  The Cart page is open
+test-data: |
+  Continue Shopping button
+steps:
+  - Click the Continue Shopping button
+expected-result: |
+  The user is redirected to the main page
+
+summary: |
+  Check the Clear Cart button functionality
+requirement: |
+  After clicking the Clear Cart button, all items are removed from the cart
+prerequisites: |
+  The main page is open
+test-data: |
+  Items in the cart
+steps:
+  - Add a product to the cart
+  - Click the Cart button
+  - Click the Clear Cart button
+expected-result: |
+  The cart is empty
+
+summary: |
+  Check the Next button functionality
+requirement: |
+  When the Next button is clicked, it navigates to the next page of the product catalog
+prerequisites: |
+  The main page is open
+test-data: |
+  Product catalog
+steps:
+  - Click the Next button on the main page
+expected-result: |
+  The user is redirected to the next page of the catalog
+
+summary: |
+  Check the Previous button functionality
+requirement: |
+  When the Previous button is clicked, it navigates to the previous page of the product catalog
+prerequisites: |
+  The main page is open
+test-data: |
+  Product catalog
+steps:
+  - Click the Previous button on the main page
+expected-result: |
+  The user is redirected to the previous page of the catalog
+
+summary: |
+  Check if items remain in the cart after closing and reopening the browser
+requirement: |
+  After closing and reopening the browser, items should remain in the cart
+prerequisites: |
+  The main page is open
+test-data: |
+  Session
+steps:
+  - Add a MacBook Pro to the cart
+  - Close the browser
+  - Open the browser
+expected-result: |
+  The user sees the MacBook Pro in the cart
+
+summary: |
+  Filter products by price range
+requirement: |
+  Products are filtered within the specified price range in the From and To fields
+prerequisites: |
+  The main page is open
+test-data: |
+  Price field
+steps:
+  - Set the price in the From field
+  - Set the price in the To field
+expected-result: |
+  A list of products within the specified price range is displayed
+
+summary: |
+  Filter products by price in the From field
+requirement: |
+  Products are filtered according to the price specified in the From field
+prerequisites: |
+  The main page is open
+test-data: |
+  Price field
+steps:
+  - Set the price in the From field
+expected-result: |
+  A list of products considering the price specified in the From field is displayed
+
+summary: |
+  Filter products by price in the To field
+requirement: |
+  Products are filtered according to the price specified in the To field
+prerequisites: |
+  The main page is open
+test-data: |
+  Price field
+steps:
+  - Set the price in the To field
+expected-result: |
+  A list of products considering the price specified in the To field is displayed
+
+summary: |
+  Close the modal window after placing an order by clicking the cross icon in the upper right corner
+requirement: |
+  The modal window is closed by clicking the cross icon in the upper right corner
+prerequisites: |
+  Order placement page
+test-data: |
+  Modal window on the order placement page
+steps:
+  - Place an order
+  - Click the cross icon in the upper right corner of the modal window
+expected-result: |
+  The modal window closes, and the user remains on the same page
+
+summary: |
+  Navigate to the main page from the cart by clicking the store logo
+requirement: |
+  The user can quickly return to the main page from the cart
+prerequisites: |
+  The user is on the cart page
+test-data: |
+  Store logo on the Cart page
+steps:
+  - Click the store logo
+expected-result: |
+  The user is redirected to the main page of the store
+
+summary: |
+  Check the correct calculation of the order total
+requirement: |
+  When multiple items are added to the cart, the total cost is calculated correctly
+prerequisites: |
+  The main page
+test-data: |
+  Correct calculation of item prices in the cart
+steps:
+  - Add multiple items to the cart
+  - Go to the cart
+  - Check the total cost of the items
+expected-result: |
+  The total cost of the order matches the sum of the added items
+
+summary: |
+  Check order confirmation after placing an order
+requirement: |
+  Clicking the Place Order button shows the message "Order successfully placed"
+prerequisites: |
+  The main page is open
+test-data: |
+  Order confirmation
+steps:
+  - Add a product to the cart
+  - Go to the cart
+  - Click the Place Order button
+expected-result: |
+  The user receives an "Order successfully placed" confirmation     
