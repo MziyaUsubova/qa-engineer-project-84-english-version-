@@ -1,0 +1,118 @@
+---
+test-cases:
+  - summary: |
+      Test searching for a product by brand name
+    status: fail
+
+  - summary: |
+      Test searching for a product by non-existent brand name or product name
+    status: pass
+
+  - summary: |
+      Test searching for a product by existing keyword in English
+    status: pass
+
+  - summary: |
+      Test searching for a product by existing keyword in Russian
+    status: fail
+
+  - summary: |
+      Test searching for a product by category
+    status: pass
+
+  - summary: |
+      Test searching for a product by category and keyword in English
+    status: pass
+
+  - summary: |
+      Test searching for a product by category and keyword in Russian
+    status: fail
+ 
+  - summary: |
+      Test interface in Russian
+    status: fail
+
+  - summary: |
+      Test adding a product to cart on the main page
+    status: pass
+
+  - summary: |
+      Test flag functionality in the list of product brands
+    status: pass
+   
+  - summary: |
+      Test adding a product to the cart with a quantity not exceeding available stock
+    status: pass
+
+  - summary: |
+      Test the Continue Shopping button functionality
+    status: pass
+
+  - summary: |
+      Test the Clear Cart button functionality
+    status: pass
+
+  - summary: |
+      Test the Next button functionality
+    status: pass
+
+  - summary: |
+      Test the Previous button functionality
+    status: pass
+
+  - summary: |
+      Test if the items in the cart are saved after closing and reopening the browser
+    status: fail
+
+  - summary: |
+      Test filtering products within a specified price range
+    status: pass
+
+  - summary: |
+      Test filtering products with a specified minimum price
+    status: fail
+
+  - summary: |
+     Test filtering products with a specified maximum price
+    status: pass
+
+  - summary: |
+     Test closing the modal window with the cross icon in the top right corner after placing an order
+    status: fail
+
+  - summary: |
+      Test returning to the main page from the cart by clicking on the store logo
+    status: pass
+
+  - summary: |
+      Test correct order cost calculation
+    status: pass
+ 
+  - summary: |
+      Test order confirmation after placing an order
+    status: fail
+
+bug reports:
+  - summary: |
+      Product search by brand name in the search field does not work
+    environment: |
+      Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+    steps to reproduce: |
+      - Go to the main page
+      - Enter "Samsung" in the Search field
+    expected result: |
+       All products from the Samsung brand are displayed
+    actual result: |
+       Search does not work
+
+  - summary: |
+      The "Price To" filter does not work
+    environment: |
+       Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+    steps to reproduce: |
+      - Go to the main page
+      - Set the value "400" in the "Price To" field
+    expected result: |
+      Products priced up to $400 are displayed
+    actual result: |
+      Products are not filtered by the "Price To" value
