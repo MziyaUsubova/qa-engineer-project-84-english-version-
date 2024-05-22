@@ -1,0 +1,88 @@
+---
+- summary: |
+    Product search by existing keyword in Russian does not work
+  environment: |
+    Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+  steps to reproduce: |
+    - Go to the main page
+    - Enter the word "Еда" in the Search field
+  expected result: |
+    Products in the "Еда" category or with "Еда" in their name or description should be displayed from the catalog
+  actual result: |
+    The message "Nothing found!" is displayed
+
+- summary: |
+    Interface partially translates to Russian
+  environment: |
+    Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+  steps to reproduce: |
+    - Go to the main page
+    - Set Language to "Russian"
+  expected result: |
+    The entire site should be in Russian
+  actual result: |
+    The site is partially in Russian; the category dropdown and product descriptions are not translated
+
+- summary: |
+    Items are not saved in the cart after closing and reopening the browser
+  environment: |
+    Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+  steps to reproduce: |
+   - Add the MacBook Pro to the cart
+   - Close the browser
+   - Reopen the browser
+  expected result: |
+    Items should remain in the cart after reopening the browser
+  actual result: |
+    The cart is empty
+
+- summary: |
+    Product filtering does not work when specifying a minimum price
+  environment: |
+    Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+  steps to reproduce: |
+    - Go to the main page
+    - Filter products by setting a minimum price
+  expected result: |
+    Products should be filtered according to the specified minimum price
+  actual result: |
+    The filter does not work
+
+- summary: |
+    Unable to close modal window using the "X" icon after placing an order
+  environment: |
+    Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+  steps to reproduce: |
+   - Add a product to the cart
+   - Place an order
+   - Click the "X" icon in the top right corner of the modal window
+  expected result: |
+    The modal window should close when clicking the "X" icon
+  actual result: |
+    The modal window does not close; the "X" icon is not clickable
+
+- summary: |
+   Unable to return to the main page by clicking the store logo in the cart
+  environment: |
+   Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+  steps to reproduce: |
+    - Go to the cart
+    - Click the store logo
+  expected result:  |
+    Navigate to the main page
+  actual result: |
+    The store logo is not clickable
+ 
+- summary: |
+    500 error received from server when attempting to place an order
+  environment: |
+    Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+  steps to reproduce: |
+    - Open DevTools
+    - Add a product to the cart
+    - Go to the cart
+    - Click "Place order"
+  expected result: |
+    Order confirmation received with Status Code: 200 OK
+  actual result: |
+    Status Code: 500 Internal Server Error
