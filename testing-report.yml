@@ -1,0 +1,91 @@
+- summary: 
+    Checking product search by brand name
+  status: pass
+
+- summary: 
+    Checking product search with non-existent brand or product name
+  status: pass
+
+- summary: 
+    Checking product search by existing keyword in English
+  status: pass
+
+- summary: 
+    Checking product search by existing keyword in Russian
+  status: fail
+
+- summary: 
+    Checking product search by category
+  status: pass
+
+- summary: 
+    Checking product search by category and keyword in English
+  status: pass
+
+- summary: 
+    Checking product search by category and keyword in Russian
+  status: fail
+
+- summary: 
+    Checking interface functionality in Russian
+  status: fail
+
+- summary: 
+    Checking the "Add to cart" function on the main page
+  status: pass
+
+- summary: 
+   Checking the checkbox function in the product brand list
+  status: pass
+
+- summary: 
+   Adding a product quantity to the cart not exceeding available stock
+  status: pass
+
+- summary: 
+    Checking the functionality of the "Continue shopping" button
+  status: pass
+
+- summary: 
+    Checking the functionality of the "Clear cart" button
+  status: pass
+
+- summary: 
+    Checking the functionality of the "Next" button
+  status: pass
+
+- summary: 
+   Checking the functionality of the "Previous" button
+  status: pass
+
+- summary: 
+    Checking the preservation of cart items after closing and reopening the browser
+  status: fail
+
+- summary: 
+   Filtering products within a specified price range
+  status: pass
+
+- summary: 
+    Filtering products by setting a minimum price
+  status: fail
+
+- summary: 
+   Filtering products by setting a maximum price
+  status: pass
+
+- summary: 
+    Closing the modal window after placing an order using the "X" icon in the top right corner
+  status: fail
+
+- summary:
+    Returning to the main page from the cart by clicking the store logo
+  status: fail
+
+- summary: 
+    Checking the correct calculation of the order total
+  status: pass
+
+- summary: 
+   Checking order confirmation after placing an order
+  status: fail
